@@ -34,7 +34,7 @@ pre {
 .slogan,
 .date,
 .license {
-  color: #6ae;
+  color: #b9ccf9;
 }
 
 .title,
@@ -54,12 +54,19 @@ code,
 kbd,
 tt,
 samp {
-  color: #e5c07b;
+  color: #fc69a9;
   background-color: rgba(240, 246, 252, 0.05);
 }
+a code,
+a kbd,
+a tt,
+a samp {
+  color: #6ae;
+}
+
 
 a {
-  color: #2997ff;
+  color: #6ae;
 }
 
 .pagination ul li a {
