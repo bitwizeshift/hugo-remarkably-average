@@ -1,0 +1,14 @@
+<aside class="article metadata">
+  {{- if .Site.Params.repo -}}
+  <div class="git-source-container">
+    {{- $path := replace .File.Path "\\" "/" -}}
+    {{- $url := print .Site.Params.repo "/blob/" .GitInfo.Hash "/content/" ( $path | urlize) -}}
+    <p class="git-source"><b>Source:</b> <a href="{{- $url | safeURL -}}">{{- .GitInfo.Hash -}}</a></p>
+  </div>
+  {{- end -}}
+  <div class="git-modified-container">
+    {{- $dateFormat := .Site.Params.dateFormat -}}
+    {{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
+    <p class="last-modified-date"><b>Last modified:</b> <time title="{{- .GitInfo.AuthorDate -}}" datetime="{{- .GitInfo.AuthorDate -}}">{{- .GitInfo.AuthorDate.Format $dateFormat -}}</time></p>
+  </div>
+</aside>

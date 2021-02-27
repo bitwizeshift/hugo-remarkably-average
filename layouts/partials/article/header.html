@@ -1,6 +1,6 @@
-<section class="article header">
+<header class="article header">
     <h1 class="article title">{{- .Title | safeHTML -}}</h1>
-    {{- $dateFormat := site.Params.dateFormat -}}
+    {{- $dateFormat := .Site.Params.dateFormat -}}
     {{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
     {{- $lastmodFormat := "" -}}
     {{- $lastmod := .Lastmod -}}
@@ -9,12 +9,10 @@
     {{- end -}}
     {{- if .Date -}}
         {{- $dateFormat := .Date.Format $dateFormat -}}
-        <p class="article date">{{- $dateFormat -}}
+        <p class="article date">
+            <time class="published"  title="{{- .Date -}}" datetime="{{- .Date -}}">{{- $dateFormat -}}</time>
             {{- if and ($lastmod.After .Date) (ne $lastmodFormat $dateFormat) -}}
-                <span class="lastmod">{{- printf (T "edited") $lastmodFormat -}}</span>
-            {{- end -}}
-            {{- if or (eq .Params.readingTime true) (and (not (eq .Params.readingTime false)) (eq site.Params.readingTime true)) -}}
-            <span class="reading-time">{{ T "readingTime" .ReadingTime }}</span>
+            <time class="lastmod" title="{{- .Lastmod -}}" datetime="{{- .Lastmod -}}">{{- printf (T "edited") $lastmodFormat -}}</time>
             {{- end -}}
             {{- if .IsTranslated -}}
             <span class="langs">
@@ -25,5 +23,4 @@
             {{- end -}}
         </p>
     {{- end -}}
-    {{- partial "article-header-extra.html" . -}}
-</section>
+</header>
