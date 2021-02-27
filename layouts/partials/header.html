@@ -1,4 +1,4 @@
-<section id="header">
+<header id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="{{- `/` | relLangURL -}}">
                 {{- $logo := site.Params.logo -}}
                 {{- if $logo -}}
@@ -11,4 +11,4 @@
     {{- with site.Params.slogan -}}
         <div class="site slogan"><span class="title">{{- . | safeHTML -}}</span></div>
     {{- end -}}
-</section>
+</header>
