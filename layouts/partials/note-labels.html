@@ -6,6 +6,8 @@
             {{- $url := print "/categories/" ($category | urlize) "/" -}}
             <a class="category" href="{{- $url | relLangURL -}}">{{- . -}}</a>
         {{- end -}}
+    </p>
+    <p class="note labels">
         {{- range .Params.tags -}}
             {{- $tag := replace . "#" "%23" -}}
             {{- $tag = replace $tag "." "%2e" -}}
