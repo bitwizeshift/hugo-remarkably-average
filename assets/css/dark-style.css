@@ -126,6 +126,10 @@ b,
               inset 1px 0 0 0 rgba(14, 17, 21, .2);
 }
 
+.article.header {
+  border-bottom-color: rgba(199,213,246,.25);
+}
+
 .article-container {
   background-color: #21262d;
   box-shadow: 0 12px 16px 0 rgba(1, 4, 9, .85);

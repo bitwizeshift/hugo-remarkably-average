@@ -419,12 +419,14 @@ b {
 
 .article.header {
   text-align: center;
-  margin-top: 4px;
-  margin-bottom: 24px;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #e6e6e6;
+  border-bottom-color: rgb(230, 230, 230);
 }
 
 .article.date {
-  margin-top: 24px;
+  margin-top: 5px;
 }
 
 .tag,
