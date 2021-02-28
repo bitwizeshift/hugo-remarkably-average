@@ -11,8 +11,12 @@
     {{- partial "article/footer.html" . -}}
   </article>
 </div>
+
+{{- if .Type | ne "page" -}}
 <div class="article bottom">
   {{- partial "article/bottom-navigation.html" . -}}
   {{- partial "article/comments.html" . -}}
 </div>
+{{- end -}}
+
 {{- end -}}
