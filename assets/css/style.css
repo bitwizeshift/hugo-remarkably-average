@@ -425,6 +425,31 @@ b {
   border-bottom-color: rgb(230, 230, 230);
 }
 
+.article.entry-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  border-bottom-color: rgb(230, 230, 230);
+}
+.article.entry-footer {
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+.article.entry {
+  text-align: left;
+}
+
+h1.article.entry-title {
+  text-align: left;
+  font-size: 1.5rem;
+}
+h1.article.entry-title > a {
+  color: rgba(29, 43, 76, .85);
+}
+h1.article.entry-title > a:hover {
+  color: #06c;
+}
+
 .article.date {
   margin-top: 5px;
 }
@@ -610,6 +635,9 @@ b {
 
 .article-container {
   background-color: #fff;
+}
+.article-container.entry {
+  margin: 1.5rem 0;
 }
 
 .article.markdown-body {

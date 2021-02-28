@@ -129,6 +129,15 @@ b,
 .article.header {
   border-bottom-color: rgba(199,213,246,.25);
 }
+.article.entry-header {
+  border-bottom-color: rgba(199,213,246,.25);
+}
+h1.article.entry-title > a {
+  color: #c7d5f6;
+}
+h1.article.entry-title > a:hover {
+  color: #6ae;
+}
 
 .article-container {
   background-color: #21262d;
