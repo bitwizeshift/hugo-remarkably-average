@@ -5,7 +5,6 @@
 <div class="article-container">
   <article class="article">
     {{- partial "article/header.html" . -}}
-    {{- with .Params.cover -}}<p><img class="cover" src="{{- . | safeURL -}}" alt></p>{{- end -}}
     <section class="article markdown-body" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
       {{- .Content -}}
     </section>
