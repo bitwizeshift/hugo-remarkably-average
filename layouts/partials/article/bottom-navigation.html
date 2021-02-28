@@ -1,12 +1,50 @@
 {{- if and (not (eq .Params.single true)) (or .PrevInSection .NextInSection) -}}
-<section class="article navigation">
-    {{- with .NextInSection -}}
-      {{- $title := .Title | safeHTML -}}
-      {{- if $title -}}<p><a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- $title -}}</a></p>{{- end -}}
+<section class="article bottom-navigation">
+
+  {{- if .Params.series -}}
+  {{- $series := index .Params.series 0 -}}
+  <section class="related-articles">
+    <p><b>Other Posts in this Series</b></p>
+    <ol>
+    {{- $url := .Permalink -}}
+    {{- range .Site.Pages.ByDate -}}
+      {{- if in .Params.series $series -}}
+        {{- if eq .Permalink $url }}
+        <li><span class="iconfont icon-article"></span> {{- .Title -}}</li>
+        {{- else -}}
+        <li><a href="{{- .Permalink -}}"><span class="iconfont icon-article"></span> {{- .Title -}}</a></li>
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
+    </ol>
+</section>
+  {{- end -}}
+
+  <section class="previous-and-next">
     {{- with .PrevInSection -}}
+    <section class="previous-article">
       {{- $title := .Title | safeHTML -}}
-      {{- if $title -}}<p><a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- .Title | safeHTML -}}</a></p>{{- end -}}
+      {{- if $title -}}
+      <div class="visible-on-wide-devices"><p><b><span class="iconfont icon-pagepreview"></span> Previous</b></p></div>
+      <div class="visible-on-small-devices"><p><b>Previous</b></p></div>
+      <div class="previous-article-link">
+        <p><a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- .Title | safeHTML -}}</a></p>
+      </div>
+      {{- end -}}
+    </section>
     {{- end -}}
+    {{- with .NextInSection -}}
+    <section class="next-article">
+      {{- $title := .Title | safeHTML -}}
+      {{- if $title -}}
+      <div class="visible-on-wide-devices"><p><b>Next <span class="iconfont icon-pagenext"></span></b></p></div>
+      <div class="visible-on-small-devices"><p><b>Next</b></p></div>
+      <div class="next-article-link">
+        <a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- $title -}}</a>
+      </p>
+      {{- end -}}
+    </section>
+    {{- end -}}
+  </section>
 </section>
 {{- end -}}

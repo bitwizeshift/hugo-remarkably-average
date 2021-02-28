@@ -478,6 +478,48 @@ b {
   font-weight: 600;
 }
 
+.article.bottom-navigation {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.article.bottom-navigation > .previous-and-next::after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.article.bottom-navigation > .related-articles {
+  text-align: center;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 768px) {
+  .article.bottom-navigation .previous-article {
+    float: none !important;
+    text-align:center !important;
+  }
+  .article.bottom-navigation .next-article {
+    float: none !important;
+    text-align:center !important;
+  }
+}
+
+.related-articles > ol  {
+  list-style: none;
+}
+
+.article.bottom-navigation .previous-article {
+  float: left;
+  text-align:left;
+}
+
+.article.bottom-navigation .next-article {
+  float: right;
+  text-align:right;
+}
+
+
 .article.license {
   background-color: #ecf4fb;
   border-radius: 4px;
