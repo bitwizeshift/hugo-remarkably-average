@@ -11,9 +11,6 @@
         {{- $dateFormat := .Date.Format $dateFormat -}}
         <p class="article date">
             <time class="published"  title="{{- .Date -}}" datetime="{{- .Date -}}">{{- $dateFormat -}}</time>
-            {{- if and ($lastmod.After .Date) (ne $lastmodFormat $dateFormat) -}}
-            <time class="lastmod" title="{{- .Lastmod -}}" datetime="{{- .Lastmod -}}">{{- printf (T "edited") $lastmodFormat -}}</time>
-            {{- end -}}
             {{- if .IsTranslated -}}
             <span class="langs">
                 {{- range .Translations -}}
