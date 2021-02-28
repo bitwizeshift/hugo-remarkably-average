@@ -1,4 +1,5 @@
 <aside class="article metadata">
+  {{- if .GitInfo -}}
   {{- if .Site.Params.repo -}}
   {{- $path := replace .File.Path "\\" "/" -}}
   {{- $url := print .Site.Params.repo "/blob/" .GitInfo.Hash "/content/" ( $path | urlize) -}}
@@ -14,4 +15,5 @@
     {{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
     <p class="last-modified-date"><b>Last modified:</b> <time title="{{- .GitInfo.AuthorDate -}}" datetime="{{- .GitInfo.AuthorDate -}}">{{- .GitInfo.AuthorDate.Format $dateFormat -}}</time></p>
   </div>
+  {{- end -}}
 </aside>
