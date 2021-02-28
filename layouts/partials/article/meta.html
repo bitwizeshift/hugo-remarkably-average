@@ -1,9 +1,12 @@
 <aside class="article metadata">
   {{- if .Site.Params.repo -}}
-  <div class="git-source-container">
-    {{- $path := replace .File.Path "\\" "/" -}}
-    {{- $url := print .Site.Params.repo "/blob/" .GitInfo.Hash "/content/" ( $path | urlize) -}}
+  {{- $path := replace .File.Path "\\" "/" -}}
+  {{- $url := print .Site.Params.repo "/blob/" .GitInfo.Hash "/content/" ( $path | urlize) -}}
+  <div class="git-source-container wide">
     <p class="git-source"><b>Source:</b> <a href="{{- $url | safeURL -}}">{{- .GitInfo.Hash -}}</a></p>
+  </div>
+  <div class="git-source-container small">
+    <p class="git-source"><b>Source:</b> <a href="{{- $url | safeURL -}}">{{- .GitInfo.AbbreviatedHash -}}</a></p>
   </div>
   {{- end -}}
   <div class="git-modified-container">

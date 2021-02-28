@@ -773,3 +773,23 @@ b {
   margin-top: 20px;
   border-top: 1px rgba(199,213,246,.25) solid;
 }
+
+/* Only show one of the two */
+@media only screen and (min-width : 320px) and (max-width : 768px) {
+  .article.metadata > .git-source-container.wide {
+    visibility: none !important;
+    display: none !important;
+  }
+  .article.metadata > .git-source-container.small {
+    visibility: visible !important;
+    display: block !important;
+  }
+}
+.article.metadata > .git-source-container.wide {
+  visibility: visible;
+  display: block;
+}
+.article.metadata > .git-source-container.small {
+  visibility: none;
+  display: none;
+}
