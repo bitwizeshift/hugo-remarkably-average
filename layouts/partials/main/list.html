@@ -13,7 +13,7 @@
                 <p class="note date">{{- .Date.Format $dateFormat -}}</p>
             {{- end -}}
             {{- if .Summary -}}<p class="note content">{{- .Summary | plainify | safeHTML -}}{{- if .Truncated -}}<span class="mldr">&mldr;</span>{{- end -}}</p>{{- end -}}
-            
+
             {{- $imgs := .Params.imgs -}}
             {{- with $imgs -}}
                 <span class="note imgs">
