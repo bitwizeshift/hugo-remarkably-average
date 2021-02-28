@@ -1,0 +1,16 @@
+{{- $type := .Get "type" -}}
+{{- if not $type -}}
+  {{- $type = "info" -}}
+{{- end -}}
+<aside class="alert alert-{{- $type -}}">
+  {{- with .Get "icon" -}}
+  <div class="icon">
+    <span class="iconfont icon-{{- . -}}"></span>
+  </div>
+  {{- end -}}
+  {{- with .Get "message" -}}
+  <div class="message">
+    {{- . | markdownify -}}
+  </div>
+  {{- end -}}
+</aside>

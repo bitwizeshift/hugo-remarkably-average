@@ -172,3 +172,39 @@ b,
 .article.markdown-body .lntable tr>:first-child {
   border-right-color: rgba(199, 213, 246, .25);
 }
+
+/* Taken from BootStrap */
+.alert b, .alert strong {
+  color: #fff;
+}
+
+.alert-primary {
+  color: #fff;
+  background-color: rgb(43, 71, 100);
+  border-color: rgb(40, 65, 91);
+}
+.alert-secondary {
+  color: #fff;
+  background-color: rgb(49, 49, 49);
+  border-color: rgb(43, 43, 43);
+}
+.alert-info {
+  color: #fff;
+  background-color: #185d8b;
+  border-color: #15527a;
+}
+.alert-success {
+  color: #fff;
+  background-color: #00664d;
+  border-color: #00523d;
+}
+.alert-warning {
+  color: #fff;
+  background-color: #ae6f09;
+  border-color: #885607
+}
+.alert-danger {
+  color: #fff;
+  background-color: #8f0c00;
+  border-color: #7a0a00;
+}
