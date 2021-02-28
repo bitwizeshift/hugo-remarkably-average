@@ -778,20 +778,20 @@ b {
 
 /* Only show one of the two */
 @media only screen and (min-width : 320px) and (max-width : 768px) {
-  .article.metadata > .git-source-container.wide {
+  .visible-on-wide-devices {
     visibility: none !important;
     display: none !important;
   }
-  .article.metadata > .git-source-container.small {
+  .visible-on-small-devices {
     visibility: visible !important;
     display: block !important;
   }
 }
-.article.metadata > .git-source-container.wide {
+.visible-on-wide-devices {
   visibility: visible;
   display: block;
 }
-.article.metadata > .git-source-container.small {
+.visible-on-small-devices {
   visibility: none;
   display: none;
 }

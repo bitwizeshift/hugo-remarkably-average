@@ -2,10 +2,10 @@
   {{- if .Site.Params.repo -}}
   {{- $path := replace .File.Path "\\" "/" -}}
   {{- $url := print .Site.Params.repo "/blob/" .GitInfo.Hash "/content/" ( $path | urlize) -}}
-  <div class="git-source-container wide">
+  <div class="git-source-container visible-on-wide-devices">
     <p class="git-source"><b>Source:</b> <a href="{{- $url | safeURL -}}">{{- .GitInfo.Hash -}}</a></p>
   </div>
-  <div class="git-source-container small">
+  <div class="git-source-container visible-on-small-devices">
     <p class="git-source"><b>Source:</b> <a href="{{- $url | safeURL -}}">{{- .GitInfo.AbbreviatedHash -}}</a></p>
   </div>
   {{- end -}}
