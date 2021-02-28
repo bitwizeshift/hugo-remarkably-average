@@ -881,7 +881,7 @@ h1.article.entry-title > a:hover {
   flex: 0 0 2rem;
 }
 .alert > .message {
-  padding-top: 0.75rem;
+  padding: 0.75rem 0;
   font-size: 1rem;
   flex: 1;
 }
