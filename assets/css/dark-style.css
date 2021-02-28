@@ -186,6 +186,9 @@ h1.article.entry-title > a:hover {
 .alert b, .alert strong {
   color: #fff;
 }
+.alert > .icon {
+  color: rgba(255,255,255,0.75);
+}
 
 .alert-primary {
   color: #fff;

@@ -878,7 +878,6 @@ h1.article.entry-title > a:hover {
 }
 .alert > .icon {
   font-size: 2rem;
-  color: rgba(255,255,255,0.75);
   flex: 0 0 2rem;
 }
 .alert > .message {
