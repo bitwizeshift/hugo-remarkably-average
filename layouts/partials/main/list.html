@@ -8,10 +8,17 @@
     {{- $relURL := replace .RelPermalink "#" "%23" -}}
     {{- $relURL = replace $relURL "." "%2e" -}}
   <article class="article article-container entry">
-    <header class="article entry-header">
-      <h1 class="article entry-title">
-        <a href="{{- $relURL -}}" rel="bookmark">{{- .Title | safeHTML -}}</a>
-      </h1>
+    <header class="article entry-header header">
+      <a href="{{- $relURL -}}" rel="bookmark">
+        <h1 class="article entry-title">
+          {{- .Title | safeHTML -}}
+        </h1>
+        {{- with .Params.subtitle -}}
+        <h2 class="article entry-subtitle subtitle">
+          {{- . | safeHTML -}}
+        </h2>
+        {{- end -}}
+      </a>
       {{- if .Date -}}
         <p class="article entry-date date">Posted on <time datetime="{{- .Date -}}" title="{{- .Date -}}">{{- .Date.Format $dateFormat -}}</time></p>
       {{- end -}}

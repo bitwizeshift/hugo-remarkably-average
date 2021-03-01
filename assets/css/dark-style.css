@@ -132,10 +132,19 @@ b,
 .article.entry-header {
   border-bottom-color: rgba(199,213,246,.25);
 }
-h1.article.entry-title > a {
+a h1.article.entry-title {
   color: #c7d5f6;
 }
-h1.article.entry-title > a:hover {
+a:hover h1.article.entry-title {
+  color: #6ae;
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-style: none;
+}
+a h2.article.entry-subtitle {
+  color: #d8dde2;
+}
+a:hover h2.article.entry-subtitle {
   color: #6ae;
 }
 

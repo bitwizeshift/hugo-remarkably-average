@@ -423,6 +423,14 @@ b {
   border-bottom: 1px solid #e6e6e6;
   border-bottom-color: rgb(230, 230, 230);
 }
+.article.title {
+  margin-bottom: 0.5rem;
+}
+.article.subtitle {
+  font-weight: lighter;
+  margin-bottom: 0.5rem;
+}
+
 .article.subscription {
   margin-top: 1rem;
 }
@@ -443,12 +451,20 @@ b {
 
 h1.article.entry-title {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
-h1.article.entry-title > a {
+a h1.article.entry-title {
   color: rgba(29, 43, 76, .85);
+  margin-bottom: 0.5rem;
 }
-h1.article.entry-title > a:hover {
+a:hover h1.article.entry-title {
+  color: #06c;
+}
+a h2.article.entry-subtitle {
+  color: #24292e;
+}
+a:hover h2.article.entry-subtitle {
   color: #06c;
 }
 
