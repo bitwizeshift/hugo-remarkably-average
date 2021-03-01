@@ -423,6 +423,9 @@ b {
   border-bottom: 1px solid #e6e6e6;
   border-bottom-color: rgb(230, 230, 230);
 }
+.article.subscription {
+  margin-top: 1rem;
+}
 
 .article.entry-header {
   margin-bottom: 1rem;

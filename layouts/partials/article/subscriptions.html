@@ -1,0 +1,22 @@
+{{- $username := "" -}}
+{{- if .Params.github.username -}}
+  {{- $username = .Params.github.username -}}
+{{- else if .Site.Params.github.username -}}
+  {{- $username = .Site.Params.github.username -}}
+{{- end -}}
+
+{{- $repository := "" -}}
+{{- if .Params.github.repository -}}
+  {{- $repository = .Params.github.repository -}}
+{{- else if .Site.Params.github.repository -}}
+  {{- $repository = .Site.Params.github.repository -}}
+{{- end -}}
+
+<aside class="article subscription">
+  {{- if and (not (eq $repository "")) (not (eq $username "")) }}
+    <a class="github-button" href="https://github.com/{{- $username -}}/{{- $repository -}}" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star {{- $username -}}/{{- $repository -}} on GitHub">Star</a>
+  {{- end -}}
+  {{- if (not (eq $username "")) -}}
+    <a class="github-button" href="https://github.com/{{- $username -}}" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Follow @{{- $username -}} on GitHub">Follow @{{- $username -}}</a>
+  {{- end -}}
+</aside>
