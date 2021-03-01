@@ -13,7 +13,7 @@
         <a href="{{- $relURL -}}" rel="bookmark">{{- .Title | safeHTML -}}</a>
       </h1>
       {{- if .Date -}}
-        <p class="article entry-date date">{{- .Date.Format $dateFormat -}}</p>
+        <p class="article entry-date date">Posted on <time datetime="{{- .Date -}}" title="{{- .Date -}}">{{- .Date.Format $dateFormat -}}</time></p>
       {{- end -}}
     </header>
     <section class="article entry-content">
