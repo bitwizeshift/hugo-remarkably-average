@@ -31,6 +31,12 @@ pre {
   background-color: #393b3d;
 }
 
+/* Social */
+
+.article.social-share a {
+  color: #d8dde2;
+}
+
 .slogan,
 .date,
 .license {

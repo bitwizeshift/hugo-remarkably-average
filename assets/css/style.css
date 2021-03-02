@@ -249,6 +249,20 @@ b {
   margin-bottom: 30px;
 }
 
+.sr-only {
+  display: none;
+}
+.article.social-share a {
+  color: #24292e;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0.25rem
+}
+.article.social-share a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
 .header.wrap {
   overflow: hidden;
 }
@@ -463,16 +477,12 @@ a h1.article.entry-title {
   color: rgba(29, 43, 76, .85);
   margin-bottom: 0.5rem;
 }
-a:hover h1.article.entry-title {
-  /* color: #06c; */
-  opacity: .5;
-}
 a h2.article.entry-subtitle {
   color: #24292e;
 }
-a:hover h2.article.entry-subtitle {
-  /* color: #06c; */
-  opacity: .5;
+.article.entry-header.header a:hover {
+  text-decoration: none;
+  opacity: .7;
 }
 
 .article.date {

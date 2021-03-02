@@ -1,11 +1,25 @@
-{{- $addThisId := site.Params.share.addThisId -}}
-{{- if $addThisId -}}
-{{- if or (eq .Params.share true) (and (ne .Params.share false) (eq site.Params.share.enable true)) -}}
-    {{- if (gt (len $addThisId) 0) -}}
-        {{- $inlineToolId := site.Params.share.inlineToolId -}}
-        <div class="article share addthis_inline_share_toolbox{{- if $inlineToolId -}}{{- if gt (len $inlineToolId) 0 -}}{{- print "_" $inlineToolId -}}{{- end -}}{{- end -}}"></div>
-        {{- $js := resources.Get "js/addthis_widget.js" | resources.Minify | resources.Fingerprint "sha384" -}}
-        <script defer src="{{- $js.RelPermalink -}}#pubid={{- $addThisId -}}" integrity="{{- $js.Data.Integrity -}}"></script>
-    {{- end -}}
-{{- end -}}
-{{- end -}}
+<section class="article social-share">
+  <span class="sr-only">Share: </span>
+  {{- $title := printf "%s" .Title | htmlEscape -}}
+  {{- $url := printf "%s" .URL | absLangURL | htmlEscape -}}
+  <!--- Share on Twitter -->
+  <a href="https://twitter.com/intent/tweet?text={{- $title -}}&amp;url={{- $url -}}" class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+    <span class="iconfont icon-twitter" aria-hidden="true"></span>
+    <span class="sr-only">Twitter</span>
+  </a>
+  <!--- Share on Facebook -->
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{- $url -}}" class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+    <span class="iconfont icon-facebook" aria-hidden="true"></span>
+    <span class="sr-only">Facebook</span>
+  </a>
+  <!--- Share on LinkedIn -->
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{- $url -}}" class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+    <span class="iconfont icon-linkedin" aria-hidden="true"></span>
+    <span class="sr-only">LinkedIn</span>
+  </a>
+  <!--- Share on Reddit -->
+  <a href="https://www.reddit.com/submit?title={{- $title -}}&amp;url={{- $url -}}" class="btn btn-social-icon btn-linkedin" title="Share on Reddit">
+    <span class="iconfont icon-reddit-alien" aria-hidden="true"></span>
+    <span class="sr-only">Reddit</span>
+  </a>
+</section>
