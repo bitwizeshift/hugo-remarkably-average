@@ -1,0 +1,21 @@
+<section class="social">
+  <a class="link" href="/index.xml" title="RSS"><span class="sr-only">RSS</span><span class="iconfont icon-rss"></span></a>
+  {{- with $.Site.Params.social.email -}}
+    <a class="link" href="mailto:{{- . -}}" title="Email me"><span class="sr-only">Email me</span><span class="iconfont icon-envelope-open-o"></span></a>
+  {{- end -}}
+  {{- with .Site.Params.social.github -}}
+  <a class="link" href="https://github.com/{{- . -}}" title="Github"><span class="sr-only">Github</span><span class="iconfont icon-github"></span></a>
+  {{- end -}}
+  {{- with .Site.Params.social.twitter -}}
+  <a class="link" href="https://twitter.com/{{- . -}}" title="Twitter"><span class="sr-only">Twitter</span><span class="iconfont icon-twitter"></span></a>
+  {{- end -}}
+  {{- with .Site.Params.social.reddit -}}
+  <a class="link" href="https://reddit.com/u/{{- . -}}" title="Reddit"><span class="sr-only">Reddit</span><span class="iconfont icon-reddit-alien"></span></a>
+  {{- end -}}
+  {{- with .Site.Params.social.linkedin -}}
+  <a class="link" href="https://linkedin.com/in/{{- . -}}" title="LinkedIn"><span class="sr-only">LinkedIn</span><span class="iconfont icon-linkedin"></span></a>
+  {{- end -}}
+  {{- with .Site.Params.social.stackoverflow -}}
+  <a class="link" href="https://stackoverflow.com/users/{{- . -}}" title="StackOverflow"><span class="sr-only">StackOverflow</span><span class="iconfont icon-stackoverflow"></span></a>
+  {{- end -}}
+</section>

@@ -37,6 +37,16 @@ pre {
   color: #d8dde2;
 }
 
+.social a {
+  background: #21262d;
+  color: #fff;
+}
+.social a:hover {
+  background: #6ae;
+  color: #000;
+}
+
+
 .slogan,
 .date,
 .license {
@@ -50,6 +60,9 @@ pre {
 
 .note.content {
   color: #d8dde2;
+}
+.nav.item {
+  color: #c7d5f6;
 }
 
 .nav.item:hover {
