@@ -19,12 +19,14 @@
     <header class="article languages header" style="float:left;">
       <h4 style="display:none;">Tags</h4>
     </header>
-    {{- range .Params.tags -}}
+    <p>
+      {{- range .Params.tags -}}
       {{- $tag := replace . "#" "%23" -}}
       {{- $tag = replace $tag "." "%2e" -}}
       {{- $url := print "/tags/" ($tag | urlize) "/" -}}
-      <a class="tag" href={{- $url | relLangURL -}}>{{- . -}}</a>
-    {{- end -}}
+        <a class="tag" href={{- $url | relLangURL -}}>{{- . -}}</a>
+      {{- end -}}
+    </p>
   </section>
   {{- end -}}
 </section>
