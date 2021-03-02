@@ -9,4 +9,6 @@
 {{- partial "syntax.html" . -}}
 {{- template "_internal/google_analytics_async.html" . -}}
 {{- partial "custom-js.html" . -}}
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+{{- $js := resources.Get "js/buttons.js" | resources.Minify | resources.Fingerprint "sha384" -}}
+<script async defer src="{{- $js.RelPermalink -}}" integrity="{{- $js.Data.Integrity -}}"></script>
