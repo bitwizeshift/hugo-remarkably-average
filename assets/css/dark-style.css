@@ -46,6 +46,10 @@ pre {
   color: #d8dde2;
 }
 
+.nav.item:hover {
+  background-color:#15181d;
+}
+
 .article.markdown-body {
   background-image: linear-gradient(90deg, rgba(250, 200, 200, .05) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg, rgba(250, 200, 200, .05) 3%, rgba(0, 0, 0, 0) 3%);
 }
@@ -135,17 +139,8 @@ b,
 a h1.article.entry-title {
   color: #c7d5f6;
 }
-a:hover h1.article.entry-title {
-  color: #6ae;
-  text-decoration: none;
-  text-decoration-line: none;
-  text-decoration-style: none;
-}
 a h2.article.entry-subtitle {
   color: #d8dde2;
-}
-a:hover h2.article.entry-subtitle {
-  color: #6ae;
 }
 
 .article-container {
