@@ -25,10 +25,15 @@
     <section class="previous-article">
       {{- $title := .Title | safeHTML -}}
       {{- if $title -}}
-      <div class="visible-on-wide-devices"><p><b><span class="iconfont icon-previous"></span> Previous</b></p></div>
-      <div class="visible-on-small-devices"><p><b>Previous</b></p></div>
-      <div class="previous-article-link">
-        <p><a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- .Title | safeHTML -}}</a></p>
+      <div class="visible-on-wide-devices">
+        <p><strong>
+          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}"><span class="iconfont icon-previous"></span> Previous Post</a>
+        </strong></p>
+      </div>
+      <div class="visible-on-small-devices">
+        <p><strong>
+          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}">Previous Post</a>
+        </strong></p>
       </div>
       {{- end -}}
     </section>
@@ -37,11 +42,16 @@
     <section class="next-article">
       {{- $title := .Title | safeHTML -}}
       {{- if $title -}}
-      <div class="visible-on-wide-devices"><p><b>Next <span class="iconfont icon-next"></span></b></p></div>
-      <div class="visible-on-small-devices"><p><b>Next</b></p></div>
-      <div class="next-article-link">
-        <a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- $title -}}</a>
-      </p>
+      <div class="visible-on-wide-devices">
+        <p><strong>
+          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}">Next Post <span class="iconfont icon-next"></span></a>
+        </strong></p>
+      </div>
+      <div class="visible-on-small-devices">
+        <p><strong>
+          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}"></a>Next Post</a>
+        </strong></p>
+      </div>
       {{- end -}}
     </section>
     {{- end -}}
