@@ -1,7 +1,7 @@
 <section class="article social-share">
   <span class="sr-only">Share: </span>
   {{- $title := printf "%s" .Title | htmlEscape -}}
-  {{- $url := printf "%s" .URL | absLangURL | htmlEscape -}}
+  {{- $url := printf "%s" .Permalink | absLangURL | htmlEscape -}}
   <!--- Share on Twitter -->
   <a href="https://twitter.com/intent/tweet?text={{- $title -}}&amp;url={{- $url -}}" class="btn btn-social-icon btn-twitter" title="Share on Twitter">
     <span class="iconfont icon-twitter" aria-hidden="true"></span>
