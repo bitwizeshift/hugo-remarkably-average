@@ -1,3 +1,6 @@
+# ALl robots allowed
 User-agent: *
-Disallow: 
-Sitemap: /sitemap.xml
+Disallow:
+
+# Sitemap file
+Sitemap: {{- "sitemap.xml" | absURL -}}
