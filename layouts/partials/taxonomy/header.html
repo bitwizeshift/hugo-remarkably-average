@@ -1,0 +1,26 @@
+{{- $title := T .Title -}}
+{{- if not $title -}}
+{{- $title = .Title -}}
+{{- end -}}
+
+{{- $term := .Data.Plural -}}
+{{- $singular := .Data.Singular -}}
+<header class="article header">
+  <h1>{{- $title -}}</h1>
+</header>
+{{- if .Content -}}
+<section class="markdown-body">
+  {{- .Content -}}
+</section>
+{{- end -}}
+<section class="pages article entry-content">
+{{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+  {{ if eq $term $taxonomy_term }}
+    {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+      {{ range $key, $value := $taxonomy }}
+        <a class="{{- $singular -}}" href="#{{- $key | urlize -}}">{{ $key }} ({{- $value.Count -}})</a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+</section>

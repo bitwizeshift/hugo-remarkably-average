@@ -354,6 +354,18 @@ b {
   list-style: none;
 }
 
+h2.tag-title {
+  color: #c7d5f6;;
+  display: inline-block;
+}
+
+h2.tag-title::before {
+  font-family: "fontello";
+  content: "\f1ec";
+  padding-right: 5px;
+}
+
+
 .note.list .item {
   width: 100%;
   margin-top: 16px;
@@ -441,6 +453,9 @@ b {
   padding-bottom: 1.5em;
   border-bottom: 1px solid #e6e6e6;
   border-bottom-color: rgb(230, 230, 230);
+}
+.list-entry.article.header {
+  padding-top: 2rem;
 }
 .article.title {
   margin-bottom: 0.5rem;
