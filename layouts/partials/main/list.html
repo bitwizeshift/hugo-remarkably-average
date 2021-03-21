@@ -23,7 +23,7 @@
         <p class="article entry-date date">Posted on <time datetime="{{- .Date -}}" title="{{- .Date -}}">{{- .Date.Format $dateFormat -}}</time></p>
       {{- end -}}
     </header>
-    <section class="article entry-content">
+    <section class="article entry-content markdown-body">
       {{- if .Summary -}}
       <p class="note content">{{- .Summary | markdownify | safeHTML -}}
         {{- if .Truncated -}}
