@@ -26,6 +26,7 @@ Features
 - [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary) supporting
 - Builtin iconfont (3KB)
 - Display author profile at article bottom
+- Support Bilibili shortcodes
 
 Preview the exampleSite:
 
@@ -74,9 +75,13 @@ logo = ""  # if you have a logo png
 slogan = "100% JavaScript-free"
 license = ""  # CC License
 fullRss = false # Puts entire HTML post into rss 'description' tag. If unset, default is false.
+ipv6ready = true # Show IPV6Ready logo on footer.
 
 [params.comments]
 enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
+
+[params.comments.utterances]
+repo = "MetalBlueberry/MetalBlueberry.github.io" # enable comments with [utteranc.es](https://utteranc.es/)
 
 [params.math]
 enable = false  # optional: true, false. Enable globally, default: false. You can always enable math on per page.
@@ -180,6 +185,14 @@ Example
 ```
 When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+```
+
+### Bilibili shortcodes
+
+```html
+{{< bilibili BV1FV411d7u7>}}
+OR
+{{< bilibili id="BV1FV411d7u7">}}
 ```
 
 ### Comments
