@@ -3,10 +3,29 @@
   supported-color-schemes: light dark;
 }
 
+@media (prefers-color-scheme: light) {
+  * {
+    --text-color: #24292e;
+    --background-color: #f3f6f9;
+    --scrollbar-color: rgba(0, 0, 0, 0.175) transparent;
+    --scrollbar-thumb-color: rgba(0, 0, 0, 0.175);
+    --scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.35);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  * {
+    --text-color: #d8dde2;
+    --background-color: #0d1117;
+    --scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+    --scrollbar-thumb-color: rgba(255, 255, 255, 0.25);
+    --scrollbar-thumb-hover-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
 /* Works on Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: rgba(0, 0, 0, 0.175) transparent
+  scrollbar-color: var(--scrollbar-color)
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -24,14 +43,14 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.175);   /* color of the scroll thumb */
+  background-color: var(--scrollbar-thumb-color);   /* color of the scroll thumb */
   background-clip: padding-box;
   border-radius: 6px;       /* roundness of the scroll thumb */
   border: 2px solid transparent  /* creates padding around scroll thumb */
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.35)
+  background-color: var(--scrollbar-thumb-hover-color)
 }
 
 html {
@@ -43,8 +62,8 @@ html {
 
 body {
   display: block;
-  color: #24292e;
-  background-color: #f3f6f9;
+  color: var(--text-color);
+  background-color: var(--background-color);
 
   word-break: normal;
   word-wrap: break-word;
@@ -945,53 +964,113 @@ a h2.article.entry-subtitle {
   display: none;
 }
 
-/* Taken from BootStrap */
+/* Alert Themes */
+
+@media (prefers-color-scheme: light) {
+  .alert {
+    --alert-text-color: rgb(31, 35, 40);
+    --alert-background-color: transparent;
+  }
+  .alert-note {
+    --alert-border-color: #0969da;
+    --alert-title-color: #0969da;
+  }
+  .alert-tip {
+    --alert-border-color: #1f883d;
+    --alert-title-color: #1a7f37;
+  }
+  .alert-warning {
+    --alert-border-color: #9a6700;
+    --alert-title-color: #9a6700;
+  }
+  .alert-important {
+    --alert-border-color: #8250df;
+    --alert-title-color: #8250df;
+  }
+  .alert-critical {
+    --alert-border-color: #cf222e;
+    --alert-title-color: #d1242f;
+  }
+  .alert-quote {
+    --alert-border-color: rgb(95, 95, 95);
+    --alert-title-color: rgb(90, 87, 87);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .alert-note {
+    --alert-border-color: #1f6feb;
+    --alert-title-color: #2f81f7;
+  }
+  .alert-tip {
+    --alert-border-color: #238636;
+    --alert-title-color: #3fb950;
+  }
+  .alert-warning {
+    --alert-border-color: #9e6a03;
+    --alert-title-color: #d29922;
+  }
+  .alert-important {
+    --alert-border-color: #8957e5;
+    --alert-title-color: #a371f7;
+  }
+  .alert-critical {
+    --alert-border-color: #da3633;
+    --alert-title-color: #f85149;
+  }
+  .alert-quote {
+    --alert-border-color: rgb(95, 95, 95);
+    --alert-title-color: rgb(155, 155, 155);
+  }
+  .alert {
+    --alert-text-color: rgb(230, 237, 243);
+    --alert-background-color: rgba(0, 0, 0, 0.2);
+  }
+}
 
 .alert {
+  background: var(--alert-background-color);
+  border-left-color: var(--alert-border-color);
+  border-left-style: solid;
+  border-left-width: .25em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
   margin: 1rem 0;
+  padding: .5rem 1rem;
   position: relative;
-  padding: .25rem .25rem;
-  border: 1px solid transparent;
-  border-radius: .5rem;
+}
+.alert > .iconfont {
+  font-size: 16px;
+}
+.alert-title {
+  box-sizing: border-box;
+  color: var(--alert-title-color);
   display: flex;
-}
-.alert > .icon {
-  font-size: 2rem;
-  flex: 0 0 2rem;
-}
-.alert > .message {
-  padding: 0.75rem 0;
-  font-size: 1rem;
-  flex: 1;
+  fill: var(--alert-title-color);
+  font-weight: bold;
+  line-height: 1;
+  margin-top: 0;
 }
 
-.alert-primary {
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
+.alert-message,
+.alert-message > p,
+.alert-message > b,
+.alert-message > i,
+.alert-message > strong,
+.alert-message > em {
+  color: var(--alert-text-color)
 }
-.alert-secondary {
-  color: #383d41;
-  background-color: #e2e3e5;
-  border-color: #d6d8db;
+.alert-icon {
+  margin-right: 0.5rem;
 }
-.alert-info {
-  color: #0c5460;
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
+.alert-header {
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
-.alert-success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-}
-.alert-warning {
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
-}
-.alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+.alert-message {
+  float: none;
+  display: block;
+  color: var(--alert-text-color);
+  margin-top: 16px;
+  line-height: 1.5;
 }

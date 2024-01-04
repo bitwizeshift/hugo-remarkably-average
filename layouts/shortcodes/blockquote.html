@@ -1,8 +1,11 @@
-<aside class="alert alert-secondary">
-  <div class="icon">
-    <span class="iconfont icon-quote-left"></span>
-  </div>
-  <div class="message">
+<aside class="alert alert-quote">
+  <header class="alert-header">
+    <p class="alert-title">
+      <span class="alert-icon iconfont icon-quote-left"></span>
+      Quote
+    </p>
+  </header>
+  <div class="alert-message">
     {{- .Inner | markdownify -}}
   </div>
 </aside>
