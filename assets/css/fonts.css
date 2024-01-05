@@ -1,0 +1,27 @@
+/*
+This CSS file is used to load fonts used by this theme.
+This includes both the Icon font as well as other basic readability fonts.
+*/
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../assets/font/fontello.eot?32072760');
+  src: url('../assets/font/fontello.eot?32072760#iefix') format('embedded-opentype'),
+       url('../assets/font/fontello.woff2?32072760') format('woff2'),
+       url('../assets/font/fontello.woff?32072760') format('woff'),
+       url('../assets/font/fontello.ttf?32072760') format('truetype'),
+       url('../assets/font/fontello.svg?32072760#fontello') format('svg');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/font/jetbrains-mono.woff2") format("woff"),
+       url("../assets/font/jetbrains-mono.ttf") format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+}
+

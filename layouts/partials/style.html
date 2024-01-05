@@ -3,8 +3,12 @@
 {{- $style = site.Params.style | lower -}}
 {{- end -}}
 
-{{- $coreCSS := resources.Get "css/normalize.css" -}}
-{{- $coreCSS = slice $coreCSS (resources.Get "css/style.css") | resources.Concat "css/tmp_normalize.css" -}}
+{{- $fonts := resources.Get "css/fonts.css" | resources.ExecuteAsTemplate "css/tmp_fonts.out.css" . -}}
+{{- $icons := resources.Get "css/icons.css" | resources.ExecuteAsTemplate "css/tmp_icons.out.css" . -}}
+{{- $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/tmp_style.out.css" . -}}
+{{- $normalize := resources.Get "css/normalize.css" | resources.ExecuteAsTemplate "css/tmp_normalize.out.css" . -}}
+
+{{- $coreCSS := slice $normalize $fonts $icons $style | resources.Concat "css/tmp_joined.css" -}}
 {{- if ne $style "light" -}}
     {{- $darkStyle := resources.Get "css/dark-style.css" -}}
     {{- if $darkStyle -}}
@@ -65,9 +69,6 @@
 {{- if $syntaxCSS -}}
   {{- $coreCSS = slice $coreCSS $syntaxCSS | resources.Concat "css/tmp_core.css" -}}
 {{- end -}}
-
-{{- $iconfontCSS := (resources.Get "css/iconfont.css") | resources.ExecuteAsTemplate "css/tmp_iconfont.css" . -}}
-{{- $coreCSS = slice $coreCSS $iconfontCSS | resources.Concat "css/tmp_iconfont_core.css" -}}
 
 {{- with partial "custom-css.html" . -}}
     {{- if ne . "" -}}

@@ -3,17 +3,16 @@
   supported-color-schemes: light dark;
 }
 
-@media (prefers-color-scheme: light) {
-  * {
-    --text-color: #24292e;
-    --background-color: #f3f6f9;
-    --scrollbar-color: rgba(0, 0, 0, 0.175) transparent;
-    --scrollbar-thumb-color: rgba(0, 0, 0, 0.175);
-    --scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.35);
-  }
+/* Default color scheme: 'light' */
+:root {
+  --text-color: #24292e;
+  --background-color: #f3f6f9;
+  --scrollbar-color: rgba(0, 0, 0, 0.175) transparent;
+  --scrollbar-thumb-color: rgba(0, 0, 0, 0.175);
+  --scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.35);
 }
 @media (prefers-color-scheme: dark) {
-  * {
+  :root {
     --text-color: #d8dde2;
     --background-color: #0d1117;
     --scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
@@ -134,11 +133,18 @@ mark {
   border-radius: 3px;
 }
 
+.heading-anchor {
+  opacity: 0.2;
+}
+.heading-anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
 code,
 tt,
 kbd,
 samp {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "JetBrains Mono", "Source Code Pro", Menlo, Consolas, "Liberation Mono", monospace;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Source Code Pro", Menlo, Consolas, "Liberation Mono", monospace;
   font-weight: 400;
   font-size: 85%;
 }
@@ -487,8 +493,11 @@ h2.tag-title::before {
 .article.subscription {
   margin-top: 1rem;
 }
+#TableOfContents ul{
+  margin-top: 0;
+}
 
-.article.entry-header {
+.article.entry-header, .article.header {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e6e6e6;
@@ -502,16 +511,16 @@ h2.tag-title::before {
   text-align: left;
 }
 
-h1.article.entry-title {
+h1.article.entry-title, h1.article.title {
   text-align: left;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-a h1.article.entry-title {
+a h1.article.entry-title, a h1.article.title {
   color: rgba(29, 43, 76, .85);
   margin-bottom: 0.5rem;
 }
-a h2.article.entry-subtitle {
+a h2.article.entry-subtitle, a h2.article.subtitle {
   color: #24292e;
 }
 .article.entry-header.header a:hover {
@@ -937,6 +946,19 @@ a h2.article.entry-subtitle {
 .article.markdown-body .lntable tr>:first-child {
   border-right: 1px dashed #e6e6e6;
 }
+.article.entry-footer {
+  display: flex;
+}
+.article-footer.author {
+  /* display: flex; */
+  width: fit-content;
+  /* flex: 1; */
+}
+.article-footer.article-labels {
+  /* display: flex; */
+  width: fit-content;
+  /* flex: 4; */
+}
 
 .article.metadata {
   padding-top: 20px;
@@ -1059,6 +1081,13 @@ a h2.article.entry-subtitle {
 .alert-message > em {
   color: var(--alert-text-color)
 }
+.alert-message p {
+  margin-bottom: 16px;
+}
+.alert-message p:last-child {
+  margin-bottom: 0 !important;
+}
+
 .alert-icon {
   margin-right: 0.5rem;
 }
