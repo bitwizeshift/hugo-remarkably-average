@@ -1126,3 +1126,10 @@ ul.taxonomy-terms {
 ul.taxonomy-terms > li::marker {
   content: none;
 }
+.embed-youtube {
+  margin: auto;
+}
+.embed {
+  width: 100%;
+  display: flex;
+}

@@ -1,0 +1,10 @@
+{{- $id := .Get "id" -}}
+{{- $description := .Get "description" -}}
+<aside class="embed">
+  <figure class="embed-youtube">
+    <iframe class="embed-video" width="560" height="315" src="https://www.youtube.com/embed/{{- $id -}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    {{- if $description -}}
+    <figcaption>{{- $description | markdownify -}}</figcaption>
+    {{- end -}}
+  </figure>
+</aside>
