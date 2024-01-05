@@ -2,7 +2,7 @@
 
 {{- $justify := false -}}
 {{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
-<main class="article-container">
+<main id="{{- .Title | urlize -}}" class="article-container">
   <article class="article">
     {{- partial "article/header.html" . -}}
     <section class="article markdown-body" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
@@ -17,15 +17,6 @@
   {{- partial "article/bottom-navigation.html" . -}}
   {{- partial "article/comments.html" . -}}
 </div>
-{{- end -}}
-{{- if .Page.Store.Get "hasMermaid" -}}
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'dark'
-  });
-</script>
 {{- end -}}
 
 {{- end -}}

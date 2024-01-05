@@ -11,11 +11,11 @@
     <header class="article entry-header header">
       <a href="{{- $relURL -}}" rel="bookmark">
         <h1 class="article entry-title">
-          {{- .Title | safeHTML -}}
+          {{- .Title | markdownify | safeHTML -}}
         </h1>
         {{- with .Params.subtitle -}}
         <h2 class="article entry-subtitle subtitle">
-          {{- . | safeHTML -}}
+          {{- . | markdownify | safeHTML -}}
         </h2>
         {{- end -}}
       </a>
@@ -25,10 +25,8 @@
     </header>
     <section class="article entry-content markdown-body">
       {{- if .Summary -}}
-      <p class="note content">{{- .Summary | markdownify | safeHTML -}}
-        {{- if .Truncated -}}
-          <span class="mldr">&mldr;</span>
-        {{- end -}}
+      <p class="note content">
+        {{- .Summary | markdownify | safeHTML -}}
       </p>
       {{- end -}}
     </section>
