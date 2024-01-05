@@ -133,13 +133,19 @@ mark {
   border-radius: 3px;
 }
 
-.heading-anchor {
+.heading-anchor, .heading-return {
   opacity: 0.2;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
 }
-.heading-anchor:hover {
+.heading-anchor:hover, .heading-return:hover {
   opacity: 1;
   text-decoration: none;
 }
+.heading-return {
+  text-align: right;
+}
+
 code,
 tt,
 kbd,

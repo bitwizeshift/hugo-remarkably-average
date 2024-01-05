@@ -1,1 +1,7 @@
-<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }} <a class="heading-anchor" href="#{{ .Anchor | safeURL }}">¶</a></h{{ .Level }}>
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
+  <a class="heading-anchor" href="#{{ .Anchor | safeURL }}">¶</a>
+{{- $hasTOC := .Page.Store.Get "hasTOC" -}}
+{{- if $hasTOC -}}
+  <a class="heading-return" href="#table-of-contents">&uparrow;</a>
+{{- end -}}
+</h{{ .Level }}>

@@ -1,6 +1,7 @@
 <aside class="table-of-contents">
-  <header class="table-of-contents navigation-header">
-    <h2 id="table-of-contents">Table of Contents <a class="heading-anchor" href="#table-of-contents">¶</a></h2>
-  </header>
+  <h2 id="table-of-contents">Table of Contents
+    <a class="heading-anchor" href="#table-of-contents">¶</a>
+  </h2>
   {{ .Page.TableOfContents }}
 </aside>
+{{ .Page.Store.Set "hasTOC" true }}
