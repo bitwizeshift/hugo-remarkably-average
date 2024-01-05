@@ -64,12 +64,12 @@ samp {
   color: #fc69a9;
   background-color: rgba(240, 246, 252, 0.05);
 }
-a code,
+/* a code,
 a kbd,
 a tt,
 a samp {
   color: #6ae;
-}
+} */
 
 
 a {

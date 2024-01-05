@@ -7,8 +7,9 @@
   {{ if eq $term $taxonomy_term }}
     {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
       {{ range $key, $value := $taxonomy }}
+        {{- $taxonomy := replace ($key | urlize) " " "-" -}}
         <header class="list-entry article header">
-          <h2 class="{{- $singular }}-title" id="{{- replace ($key | urlize) " " "-" -}}">
+          <h2 class="taxonomy-title taxonomy-type-{{- $singular -}}" id="{{- $taxonomy -}}">
             {{- $key }}
             <a class="heading-anchor" href="#{{- $key | urlize -}}">¶</a>
             <a class="heading-return" href="#{{- $title -}}">&uparrow;</a>

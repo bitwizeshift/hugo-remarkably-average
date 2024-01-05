@@ -385,12 +385,12 @@ b {
   list-style: none;
 }
 
-h2.tag-title {
+h2.taxonomy-title {
   color: #c7d5f6;;
   display: inline-block;
 }
 
-h2.tag-title::before {
+h2.taxonomy-type-tag::before {
   font-family: "fontello";
   content: "\f1ec";
   padding-right: 5px;
@@ -1125,6 +1125,9 @@ ul.taxonomy-terms {
 }
 ul.taxonomy-terms > li::marker {
   content: none;
+}
+ul.taxonomy-terms > li {
+  list-style: none;
 }
 .embed-youtube {
   margin: auto;
