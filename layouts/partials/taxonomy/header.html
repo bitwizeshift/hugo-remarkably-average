@@ -6,7 +6,7 @@
 {{- $term := .Data.Plural -}}
 {{- $singular := .Data.Singular -}}
 <header class="article header">
-  <h1>{{- $title -}}</h1>
+  <h1 class="article title">{{- $title -}}</h1>
 </header>
 {{- if .Content -}}
 <section class="markdown-body">
@@ -14,13 +14,15 @@
 </section>
 {{- end -}}
 <section class="pages article entry-content">
-{{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
-  {{ if eq $term $taxonomy_term }}
-    {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
-      {{ range $key, $value := $taxonomy }}
-        <a class="{{- $singular -}}" href="#{{- $key | urlize -}}">{{ $key }} ({{- $value.Count -}})</a>
+  <ul class="taxonomy-terms">
+  {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+    {{ if eq $term $taxonomy_term }}
+      {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+        {{ range $key, $value := $taxonomy }}
+          <li><a class="{{- $singular -}}" href="#{{- $key | urlize -}}">{{ $key }} ({{- $value.Count -}})</a></li>
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
-{{ end }}
+  </ul>
 </section>

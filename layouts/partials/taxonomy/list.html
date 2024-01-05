@@ -2,13 +2,17 @@
 {{- $singular := .Data.Singular -}}
 {{- $dateFormat := site.Params.dateFormat -}}
 {{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
-
+{{- $title := .Title | urlize -}}
 {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
   {{ if eq $term $taxonomy_term }}
     {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
       {{ range $key, $value := $taxonomy }}
         <header class="list-entry article header">
-          <h2 class="{{- $singular }}-title" id="{{- replace ($key | urlize) " " "-" -}}">{{- $key }} ({{ $value.Count -}})</h2>
+          <h2 class="{{- $singular }}-title" id="{{- replace ($key | urlize) " " "-" -}}">
+            {{- $key }}
+            <a class="heading-anchor" href="#{{- $key | urlize -}}">¶</a>
+            <a class="heading-return" href="#{{- $title -}}">&uparrow;</a>
+          </h2>
         </header>
         <section class="pages article entry-content">
           {{ range $value.Pages }}

@@ -1109,3 +1109,20 @@ a h2.article.entry-subtitle, a h2.article.subtitle {
   margin-top: 16px;
   line-height: 1.5;
 }
+
+ul.taxonomy-terms {
+  column-count: 3;
+}
+@media (max-width : 320px) {
+  ul.taxonomy-terms {
+    column-count: 1;
+  }
+}
+@media (min-width : 320px) and (max-width : 768px) {
+  ul.taxonomy-terms {
+    column-count: 2;
+  }
+}
+ul.taxonomy-terms > li::marker {
+  content: none;
+}
