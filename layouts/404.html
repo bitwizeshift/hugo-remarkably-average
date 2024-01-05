@@ -1,11 +1,25 @@
 {{- define "main" -}}
-<div class="article-container">
-<article class="article markdown-body">
-  <h1 id="title">NOT FOUND</h1>
-  <pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="o">*</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">"</span><span class="s">404</span><span class="s">"</span><span class="p">)</span><span class="p">;</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre>
+<main class="article-container">
+<article class="article">
+  <header class="article header">
+    <h1 class="article title">Not Found</h1>
+    <h2 class="article subtitle">You done goof'd, son</h2>
+  </header>
+  <section class="article markdown-body">
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="fm">panic!</span><span class="p">(</span><span class="s">"404: not found!"</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"></span></span></span></code></pre></div>
+<blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">404: not found!
+</span></span><span class="line"><span class="cl">stack backtrace:
+</span></span><span class="line"><span class="cl">   0: rust_begin_unwind
+</span></span><span class="line"><span class="cl">             at /rustc/5b5e17e2e1f98209600657ee3f6e9b5393fdd5a0/library/std/src/panicking.rs:597:5
+</span></span><span class="line"><span class="cl">   1: core::panicking::panic_fmt
+</span></span><span class="line"><span class="cl">             at /rustc/5b5e17e2e1f98209600657ee3f6e9b5393fdd5a0/library/core/src/panicking.rs:72:14
+</span></span><span class="line"><span class="cl">   2: blog::main
+</span></span><span class="line"><span class="cl">             at ./blog/main.rs:2:3
+</span></span></code></pre></div></blockquote>
+</section>
 </article>
-</div>
+</main>
 {{- end -}}
