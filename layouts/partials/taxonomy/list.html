@@ -8,22 +8,24 @@
     {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
       {{ range $key, $value := $taxonomy }}
         {{- $taxonomy := replace ($key | urlize) " " "-" -}}
-        <header class="list-entry article header">
-          <h2 class="taxonomy-title taxonomy-type-{{- $singular -}}" id="{{- $taxonomy -}}">
-            {{- $key }}
-            <a class="heading-anchor" href="#{{- $key | urlize -}}">¶</a>
-            <a class="heading-return" href="#{{- $title -}}">&uparrow;</a>
-          </h2>
-        </header>
         <section class="pages article entry-content">
-          {{ range $value.Pages }}
-          <p class="article entry-date date">
-            {{- if .Date -}}
-            <time datetime="{{- .Date -}}" title="{{- .Date -}}">{{- .Date.Format $dateFormat -}}</time>:
-            {{ end -}}
-            <a href="{{- .Permalink -}}">{{- .LinkTitle -}}</a>
-          </p>
-          {{ end }}
+          <header class="list-entry article header">
+            <h2 class="taxonomy-title taxonomy-type-{{- $singular -}}" id="{{- $taxonomy -}}">
+              {{- $key }}
+              <a class="heading-anchor" href="#{{- $key | urlize -}}">¶</a>
+              <a class="heading-return" href="#{{- $title -}}">&uparrow;</a>
+            </h2>
+          </header>
+          <ul class="taxonomy-entries">
+            {{ range $value.Pages }}
+            <li>
+              {{- if .Date -}}
+              <time class="entry-date date" datetime="{{- .Date -}}" title="{{- .Date -}}">{{- .Date.Format $dateFormat -}}</time>:
+              {{ end -}}
+              <a href="{{- .Permalink -}}">{{- .LinkTitle -}}</a>
+            </li>
+            {{ end }}
+          </ul>
         </section>
       {{ end }}
     {{ end }}

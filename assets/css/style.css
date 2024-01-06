@@ -498,10 +498,23 @@ h2.taxonomy-type-category::before {
 }
 .article.title {
   margin-bottom: 0.5rem;
+  display: inline-block;
+}
+.article.entry-title {
+  display: inline-block;
 }
 .article.subtitle {
   font-weight: lighter;
   margin-bottom: 0.5rem;
+}
+ul.taxonomy-entries {
+  display: block;
+}
+ul.taxonomy-entries > li::before {
+  content: none;
+}
+ul.taxonomy-entries > li {
+  list-style: none;
 }
 
 .article.subscription {
