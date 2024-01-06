@@ -1,0 +1,20 @@
+{{- if or .Params.categories .Params.tags -}}
+  <aside class="article article-taxonomy">
+    <ul class="article article-taxonomy article-categories">
+      {{- range .Params.categories -}}
+        {{- $category := replace . "#" "%23" -}}
+        {{- $category = replace $category "." "%2e" -}}
+        {{- $url := print "categories#" ($category | urlize) -}}
+        <li><a class="category" href="{{- $url | relLangURL -}}">{{- . -}}</a></li>
+      {{- end -}}
+    </ul>
+    <ul class="article article-taxonomy article-tags">
+      {{- range .Params.tags -}}
+        {{- $tag := replace . "#" "%23" -}}
+        {{- $tag = replace $tag "." "%2e" -}}
+        {{- $url := print "tags#" ($tag | urlize) -}}
+        <li><a class="tag" href="{{- $url | relLangURL -}}">{{- . -}}</a></li>
+      {{- end -}}
+    </ul>
+  </aside>
+{{- end -}}

@@ -10,7 +10,6 @@
 </footer>
 {{- partial "math.html" . -}}
 {{- partial "syntax.html" . -}}
-{{- template "_internal/google_analytics_async.html" . -}}
 {{- partial "custom-js.html" . -}}
 
 {{- $js := resources.Get "js/buttons.js" | resources.Minify | resources.Fingerprint "sha384" -}}

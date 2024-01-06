@@ -615,11 +615,17 @@ a.article.entry-bookmark {
 ul.translations {
   float: right;
 }
-ul.translations::marker {
+ul.translations > li::marker {
   content: none;
-  display: inline-block;
 }
 ul.translations > li{
+  list-style: none;
+  display: inline-block;
+}
+ul.article-taxonomy > li::marker {
+  display: none;
+}
+ul.article-taxonomy > li{
   list-style: none;
   display: inline-block;
 }
