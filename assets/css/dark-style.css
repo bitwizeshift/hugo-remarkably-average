@@ -88,13 +88,8 @@ a {
   background-color: rgba(41, 151, 255, .5);
 }
 
-.tag {
+.tag, .category {
   color: #c7d5f6;
-}
-
-.category {
-  color: #24292e;
-  background-color: rgba(199, 213, 246);
 }
 
 strong,
