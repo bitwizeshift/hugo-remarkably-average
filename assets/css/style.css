@@ -629,7 +629,57 @@ ul.article-taxonomy > li{
   list-style: none;
   display: inline-block;
 }
-
+ul.nav {
+  display:inline-block;
+}
+ul.nav > li {
+  list-style: none;
+  display: inline-block;
+}
+ul.nav > li::marker {
+  content: none;
+}
+@media (max-width : 740px) {
+  ul.nav {
+    display: block;
+  }
+  ul.nav > li {
+    display: block;
+  }
+}
+.header.title {
+  display: block;
+  width: fit-content;
+  float: left;
+  padding: 1rem;
+}
+.header.nav {
+  display: block;
+  float: right;
+  width: fit-content;
+}
+@media (max-width : 740px) {
+  .header.title {
+    float: left;
+    clear: both;
+    width: 100%;
+    text-align: center;
+  }
+  .header.nav {
+    clear: both;
+    width: 100%;
+    text-align: center;
+  }
+  .nav > li {
+    width: 100%;
+  }
+  .nav.item {
+    display: block;
+    width: 100%;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+}
 .translation::before,
 .translation-current::before {
   content: "[";
