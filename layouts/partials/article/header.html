@@ -1,5 +1,16 @@
 <header class="article header">
   <h1 class="article title">{{- .Title | markdownify | safeHTML -}}</h1>
+  {{- if .IsTranslated -}}
+  <ul class="article translations">
+    {{- range .AllTranslations -}}
+      {{- if eq $.Site.LanguageCode .Lang -}}
+      <li><span class="translation-current" title="{{- .Title -}}">{{- .Lang -}}</span></li>
+      {{- else -}}
+      <li><a class="translation" rel="alternate bookmark" hreflang="{{- .Lang -}}" href="{{- .RelPermalink -}}" title="{{- .Title -}}">{{- .Lang -}}</a></li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+  {{- end -}}
   {{- with .Params.subtitle -}}
   <h2 class="article subtitle">{{- . | markdownify | safeHTML -}}</h2>
   {{- end -}}
@@ -11,17 +22,8 @@
     {{- $lastmodFormat = $lastmod.Format $dateFormat -}}
   {{- end -}}
   {{- if .Date -}}
-    {{- $dateFormat := .Date.Format $dateFormat -}}
-    <p class="article date">
-      Posted on <time class="published"  title="{{- .Date -}}" datetime="{{- .Date -}}">{{- $dateFormat -}}</time>
-      {{- if .IsTranslated -}}
-      <span class="langs">
-        {{- range .Translations -}}
-        <span class="lang"><a href="{{- .RelPermalink -}}">{{- .Lang -}}</a></span>
-        {{- end -}}
-      </span>
-      {{- end -}}
-    </p>
+    {{- $dateFormat := .Date | time.Format $dateFormat -}}
+    <p class="article date">{{- i18n "posted" -}}  <time class="published"  title="{{- .Date -}}" datetime="{{- .Date -}}">{{- $dateFormat -}}</time></p>
   {{- end -}}
   {{- partial "article/subscriptions.html" . -}}
   {{- partial "article/cover.html" . -}}

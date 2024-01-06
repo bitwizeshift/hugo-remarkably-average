@@ -1,6 +1,9 @@
 [edited]
 other = " • bearbeitet am %s"
 
+[posted]
+other = "Posted on "
+
 [readingTime]
 one = " • Lesezeit eine Minute"
 other = " • Lesezeit {{ .Count }} Minuten"

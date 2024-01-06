@@ -9,7 +9,7 @@
     {{- $relURL = replace $relURL "." "%2e" -}}
   <article class="article article-container entry">
     <header class="article entry-header header">
-      <a href="{{- $relURL -}}" rel="bookmark">
+      <a class="article entry-bookmark" href="{{- $relURL -}}" rel="bookmark">
         <h1 class="article entry-title">
           {{- .Title | markdownify | safeHTML -}}
         </h1>
@@ -19,8 +19,21 @@
         </h2>
         {{- end -}}
       </a>
+      {{- $currentLang := .Site.Language.Lang -}}
+      {{- if .IsTranslated -}}
+      <ul class="article entry-translations translations">
+        {{- range .AllTranslations -}}
+          {{- if eq $currentLang .Lang -}}
+          <li><span class="translation-current" title="{{- .Title -}}">{{- .Lang -}}</span></li>
+          {{- else -}}
+          <li><a class="translation" rel="alternate bookmark" hreflang="{{- .Lang -}}" href="{{- .RelPermalink -}}" title="{{- .Title -}}">{{- .Lang -}}</a></li>
+          {{- end -}}
+        {{- end -}}
+      </ul>
+      {{- end -}}
       {{- if .Date -}}
-        <p class="article entry-date date">Posted on <time datetime="{{- .Date -}}" title="{{- .Date -}}">{{- .Date.Format $dateFormat -}}</time></p>
+        {{- $date := .Date | time.Format $dateFormat -}}
+        <p class="article entry-date date">{{- i18n "posted" -}} <time datetime="{{- .Date -}}" title="{{- .Date -}}">{{- $date -}}</time></p>
       {{- end -}}
     </header>
     <section class="article entry-content markdown-body">

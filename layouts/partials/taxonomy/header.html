@@ -19,7 +19,7 @@
     {{ if eq $term $taxonomy_term }}
       {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
         {{ range $key, $value := $taxonomy }}
-          <li><a class="{{- $singular -}}" href="#{{- $key | urlize -}}">{{ $key }} ({{- $value.Count -}})</a></li>
+          <li><a class="{{- $singular -}}" href="#{{- replace ($key | urlize) " " "-" -}}">{{ $key }} ({{- $value.Count -}})</a></li>
         {{ end }}
       {{ end }}
     {{ end }}

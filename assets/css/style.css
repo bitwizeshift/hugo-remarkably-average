@@ -604,6 +604,55 @@ a h2.article.entry-subtitle, a h2.article.subtitle {
 .tag {
   color: rgba(29, 43, 76, .85);
 }
+a.article.entry-bookmark {
+  display: inline-block;
+  width: fit-content;
+}
+.article.entry-date.date {
+  display: block;
+}
+
+ul.translations {
+  float: right;
+}
+ul.translations::marker {
+  content: none;
+  display: inline-block;
+}
+ul.translations > li{
+  list-style: none;
+  display: inline-block;
+}
+
+.translation::before,
+.translation-current::before {
+  content: "[";
+  padding-right: 2px;
+}
+.translation::after,
+.translation-current::after {
+  content: "]";
+  padding-left: 2px;
+}
+.translation::before,
+.translation::after,
+.translation-current::before,
+.translation-current::after {
+  color: var(--font-color);
+}
+.translation-current {
+  color: var(--font-color-disabled);
+}
+
+.article.date {
+  display: inline;
+  padding-right: 5px;
+}
+.article.translations {
+  display: inline;
+  font-size: 14px;
+  font-family: var(--monospace-font-family);
+}
 
 .category {
   color: #fff;
