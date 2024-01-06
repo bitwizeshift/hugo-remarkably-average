@@ -27,12 +27,12 @@
       {{- if $title -}}
       <div class="visible-on-wide-devices">
         <p><strong>
-          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}"><span class="iconfont icon-previous"></span> Previous Post</a>
+          <a class="link" rel="prev" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}"><span class="iconfont icon-previous"></span> Previous Post</a>
         </strong></p>
       </div>
       <div class="visible-on-small-devices">
         <p><strong>
-          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}">Previous Post</a>
+          <a class="link" rel="prev" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}">Previous Post</a>
         </strong></p>
       </div>
       {{- end -}}
@@ -44,12 +44,12 @@
       {{- if $title -}}
       <div class="visible-on-wide-devices">
         <p><strong>
-          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}">Next Post <span class="iconfont icon-next"></span></a>
+          <a class="link" rel="next" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}">Next Post <span class="iconfont icon-next"></span></a>
         </strong></p>
       </div>
       <div class="visible-on-small-devices">
         <p><strong>
-          <a class="link" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}"></a>Next Post</a>
+          <a class="link" rel="next" href="{{- .RelPermalink -}}" title="{{- .Title | safeHTML -}}"></a>Next Post</a>
         </strong></p>
       </div>
       {{- end -}}
