@@ -25,3 +25,20 @@ This includes both the Icon font as well as other basic readability fonts.
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'silkscreen';
+  src: url('../assets/font/silkscreen.woff2') format('woff2'),
+       url('../assets/font/silkscreen.woff') format('woff')
+       url('../assets/font/silkscreen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'silkscreen-bold';
+  src: url('../assets/font/silkscreen-bold.woff2') format('woff2'),
+       url('../assets/font/silkscreen-bold.woff') format('woff')
+       url('../assets/font/silkscreen-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
