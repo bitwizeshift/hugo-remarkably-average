@@ -3,19 +3,11 @@
 {{- partial "head.html" . -}}
 
 <body>
-    {{- partial "header.html" . -}}
-    <section id="content">
-        {{- block "main" . -}}{{- end -}}
-    </section>
-    {{- partial "footer.html" . -}}
+  {{- partial "header.html" . -}}
+  <section id="content">
+    {{- block "main" . -}}{{- end -}}
+  </section>
+  {{- partial "footer.html" . -}}
+  {{- partial "script.html" . -}}
 </body>
-{{- if .Page.Store.Get "hasMermaid" -}}
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'dark'
-  });
-</script>
-{{- end -}}
 </html>

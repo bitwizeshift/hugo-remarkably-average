@@ -8,9 +8,3 @@
     {{- partial "copyright.html" ($copyright | safeHTML) -}}
   </div>
 </footer>
-{{- partial "math.html" . -}}
-{{- partial "syntax.html" . -}}
-{{- partial "custom-js.html" . -}}
-
-{{- $js := resources.Get "js/buttons.js" | resources.Minify | resources.Fingerprint "sha384" -}}
-<script async defer src="{{- $js.RelPermalink -}}" integrity="{{- $js.Data.Integrity -}}"></script>

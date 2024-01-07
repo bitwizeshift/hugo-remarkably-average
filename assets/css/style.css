@@ -1101,9 +1101,7 @@ ul.nav > li::marker {
 }
 
 .article.metadata {
-  padding-top: 20px;
   margin-top: 20px;
-  border-top: var(--separator-top-color);
 }
 
 /* Only show one of the two */
