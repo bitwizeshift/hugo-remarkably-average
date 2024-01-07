@@ -5,45 +5,47 @@
   {{- end -}}
 
   {{- with $profile -}}
-    {{- with .github -}}
-    <a class="article-author-avatar"
-      ref="author"
-      href="https://github.com/{{- . -}}"
-      title="@{{- . -}} on GitHub">
-      <img src="https://github.com/{{- . -}}.png?size=68" style="border-radius: 50%" alt="@{{- . -}} Avatar" />
-    </a>
-    {{- end -}}
-    <ul class="article-author-contact">
-      {{- with .name -}}
-      <li class="contact-author-name">
-        <span class="author-name">{{- . -}}</span>
-      </li>
-      {{- end -}}
-      {{- with .email -}}
-      <li class="contact contact-author-email">
-        <a class="contact author-email" title="Contact Me" rel="author" href="mailto:{{- . -}}"></a>
-      </li>
-      {{- end -}}
+    {{- if .enable -}}
       {{- with .github -}}
-      <li class="contact-author-github">
-        <a class="contact author-github" title="Github" rel="author" href="https://github.com/{{- . -}}"></a>
-      </li>
+      <a class="article-author-avatar"
+        ref="author"
+        href="https://github.com/{{- . -}}"
+        title="@{{- . -}} on GitHub">
+        <img src="https://github.com/{{- . -}}.png?size=68" style="border-radius: 50%" alt="@{{- . -}} Avatar" />
+      </a>
       {{- end -}}
-      {{- with .reddit -}}
-      <li class="contact contact-author-reddit">
-        <a class="contact author-reddit" title="Reddit" rel="author" href="https://reddit.com/u/{{- . -}}"></a>
-      </li>
+      <ul class="article-author-contact">
+        {{- with .name -}}
+        <li class="contact-author-name">
+          <span class="author-name">{{- . -}}</span>
+        </li>
+        {{- end -}}
+        {{- with .email -}}
+        <li class="contact contact-author-email">
+          <a class="contact author-email" title="Contact Me" rel="author" href="mailto:{{- . -}}"></a>
+        </li>
+        {{- end -}}
+        {{- with .github -}}
+        <li class="contact-author-github">
+          <a class="contact author-github" title="Github" rel="author" href="https://github.com/{{- . -}}"></a>
+        </li>
+        {{- end -}}
+        {{- with .reddit -}}
+        <li class="contact contact-author-reddit">
+          <a class="contact author-reddit" title="Reddit" rel="author" href="https://reddit.com/u/{{- . -}}"></a>
+        </li>
+        {{- end -}}
+        {{- with .linkedin -}}
+        <li class="contact contact-author-linkedin">
+          <a class="contact author-linkedin" title="LinkedIn" rel="author" href="https://linkedin.com/in/{{- . -}}"></a>
+        </li>
+        {{- end -}}
+        {{- with .stackoverflow -}}
+        <li class="contact contact-author-stackoverflow">
+          <a class="contact author-stackoverflow" title="StackOverflow" rel="author" href="https://stackoverflow.com/users/{{- . -}}"></a>
+        </li>
+        {{- end -}}
       {{- end -}}
-      {{- with .linkedin -}}
-      <li class="contact contact-author-linkedin">
-        <a class="contact author-linkedin" title="LinkedIn" rel="author" href="https://linkedin.com/in/{{- . -}}"></a>
-      </li>
-      {{- end -}}
-      {{- with .stackoverflow -}}
-      <li class="contact contact-author-stackoverflow">
-        <a class="contact author-stackoverflow" title="StackOverflow" rel="author" href="https://stackoverflow.com/users/{{- . -}}"></a>
-      </li>
-      {{- end -}}
-  {{- end -}}
+    {{- end -}}
   </ul>
 </aside>
