@@ -19,8 +19,8 @@
           <ul class="taxonomy-entries">
             {{ range $value.Pages }}
             <li>
-              {{- if .Date -}}
-              <time class="entry-date date" datetime="{{- .Date -}}" title="{{- .Date -}}">{{- .Date.Format $dateFormat -}}</time>:
+              {{- with .Date -}}
+                <time class="entry-date date" datetime="{{- . -}}" title="{{- . -}}">{{- .Format $dateFormat -}}</time>
               {{ end -}}
               <a href="{{- .Permalink -}}">{{- .LinkTitle -}}</a>
             </li>

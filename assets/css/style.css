@@ -1103,6 +1103,10 @@ ul.nav > li::marker {
 .article.metadata {
   margin-top: 20px;
 }
+time.date {
+  width: 10em;
+  display: inline-block;
+}
 
 /* Only show one of the two */
 @media only screen and (min-width : 320px) and (max-width : 768px) {
