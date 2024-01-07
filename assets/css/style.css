@@ -371,7 +371,7 @@ acronym {
   text-align: center;
 }
 
-.date {
+.date, .reading-time {
   font-size: .875em;
 }
 
@@ -398,13 +398,13 @@ h2.taxonomy-title {
 
 h2.taxonomy-type-tag::before {
   font-family: var(--icon-font-family);
-  content: "\f1ec";
+  content: "\e821";
   padding-right: 5px;
 }
 
 h2.taxonomy-type-category::before {
   font-family: var(--icon-font-family);
-  content: "\f292";
+  content: "\e81e";
   padding-right: 5px;
 }
 
@@ -596,13 +596,13 @@ a h2.article.entry-subtitle, a h2.article.subtitle {
 
 .tag::before {
   font-family: var(--icon-font-family);
-  content: "\f1ec";
+  content: "\e821";
   padding-right: 5px;
   /* opacity: .5; */
 }
 .category::before {
   font-family: var(--icon-font-family);
-  content: "\f292";
+  content: "\e81f";
   padding-right: 5px;
 }
 
@@ -829,8 +829,15 @@ ul.nav > li::marker {
 
 .slogan,
 .date,
-.license {
+.license,
+.reading-time {
   color: rgba(23,81,153,.72);
+}
+
+.article.reading-time::before {
+  font-family: var(--icon-font-family);
+  content: '\e80f';
+  padding-right: 5px;
 }
 
 .pagination {
@@ -1328,6 +1335,12 @@ ul.article-author-contact > li.contact-author-name {
 .author-email:before {
   content: '\f2b6';
 }
+time.published:before {
+  display: inline-block;
+  font-family: var(--icon-font-family);
+  padding-right: 5px;
+  content: '\e81b';
+}
 .author-github:before {
   content: '\f113';
 }
@@ -1342,4 +1355,15 @@ ul.article-author-contact > li.contact-author-name {
 }
 .contact {
   font-size: 20px;
+}
+ul.article-header-meta > li::marker {
+  content: none;
+}
+ul.article-header-meta {
+  display: block;
+}
+ul.article-header-meta > li {
+  display: inline-block;
+  padding-right: 0.5em;
+  list-style: none;
 }

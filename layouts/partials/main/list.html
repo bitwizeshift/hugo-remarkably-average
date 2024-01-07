@@ -1,8 +1,6 @@
 {{- $paginator := . -}}
 
 {{- if gt $paginator.TotalPages 0 -}}
-{{- $dateFormat := site.Params.dateFormat -}}
-{{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
 <main class="article">
   {{- range $paginator.Pages -}}
     {{- $relURL := replace .RelPermalink "#" "%23" -}}
@@ -31,10 +29,7 @@
         {{- end -}}
       </ul>
       {{- end -}}
-      {{- if .Date -}}
-        {{- $date := .Date | time.Format $dateFormat -}}
-        <p class="article entry-date date">{{- i18n "posted" -}} <time datetime="{{- .Date -}}" title="{{- .Date -}}">{{- $date -}}</time></p>
-      {{- end -}}
+      {{- partial "header-meta.html" . -}}
     </header>
     <section class="article entry-content markdown-body">
       {{- if .Summary -}}

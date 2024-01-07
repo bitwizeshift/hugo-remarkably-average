@@ -1,0 +1,18 @@
+{{- $dateFormat := site.Params.dateFormat -}}
+{{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
+{{- if or .Date .Params.readingTime -}}
+  <ul class="article-header-meta">
+    {{- if .Date -}}
+      {{- $dateFormat := .Date | time.Format $dateFormat -}}
+      {{- $prefix := i18n "posted" -}}
+      <li>
+        <p class="article date"><time class="published"  title="{{- print $prefix .Date -}}" datetime="{{- .Date -}}">{{- $dateFormat -}}</time></p>
+      </li>
+    {{- end -}}
+    {{- if or .Params.readingTime site.Params.readingTime -}}
+      <li>
+        <p class="article reading-time">{{- i18n "readingTime" . -}}</p>
+      </li>
+    {{- end -}}
+  </ul>
+{{- end -}}

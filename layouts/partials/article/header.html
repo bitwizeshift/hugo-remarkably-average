@@ -21,10 +21,7 @@
   {{- if $lastmod -}}
     {{- $lastmodFormat = $lastmod.Format $dateFormat -}}
   {{- end -}}
-  {{- if .Date -}}
-    {{- $dateFormat := .Date | time.Format $dateFormat -}}
-    <p class="article date">{{- i18n "posted" -}}  <time class="published"  title="{{- .Date -}}" datetime="{{- .Date -}}">{{- $dateFormat -}}</time></p>
-  {{- end -}}
+  {{- partial "header-meta.html" . -}}
   {{- partial "article/subscriptions.html" . -}}
   {{- partial "article/cover.html" . -}}
 </header>

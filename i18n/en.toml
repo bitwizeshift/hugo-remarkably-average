@@ -1,12 +1,12 @@
 [edited]
-other = " • edited %s"
+other = "edited %s"
 
 [posted]
 other = "Posted on "
 
 [readingTime]
-one = " • One minute to read"
-other = " • {{ .Count }} minutes to read"
+one = "One minute to read"
+other = "{{ .ReadingTime }} minutes to read"
 
 [Categories]
 other = "Categories"
