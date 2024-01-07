@@ -12,8 +12,8 @@
     {{- partial "navigation-items.html" site.Params.nav -}}
   </div>
   {{- with site.Params.slogan -}}
-  <div class="header slogan">
-    <span class="title">{{- . | safeHTML -}}</span>
+  <div class="header slogan visible-on-wide-devices">
+    <span class="slogan">{{- . | safeHTML -}}</span>
   </div>
   {{- end -}}
 </header>
