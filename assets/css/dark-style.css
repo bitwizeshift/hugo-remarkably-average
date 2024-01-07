@@ -88,7 +88,7 @@ a {
   background-color: rgba(41, 151, 255, .5);
 }
 
-.tag, .category {
+.taxonomy, .tag, .category, .contact {
   color: #c7d5f6;
 }
 

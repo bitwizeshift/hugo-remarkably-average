@@ -1,8 +1,9 @@
 <footer class="article footer">
-  {{- partial "article/labels.html" . -}}
   {{- partial "article/share.html" . -}}
-  {{- partial "article/license.html" . -}}
-  {{- partial "article/author.html" . -}}
+  <section class="article entry-footer">
+    {{- partial "author-contact.html" . -}}
+    {{- partial "taxonomy-list.html" . -}}
+  </section>
   {{- partial "article/extra.html" . -}}
   {{- partial "article/meta.html" . -}}
 </footer>

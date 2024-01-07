@@ -430,6 +430,8 @@ h2.taxonomy-type-category::before {
   background-color: #dcdee0;
 }
 
+.taxonomy:hover,
+.contact:hover,
 .tag:hover,
 .category:hover {
   opacity: .5;
@@ -501,6 +503,7 @@ h2.taxonomy-type-category::before {
 .article.title {
   margin-bottom: 0.5rem;
   display: inline-block;
+  width: fit-content;
 }
 .article.entry-title {
   display: inline-block;
@@ -616,6 +619,7 @@ a.article.entry-bookmark {
 
 ul.translations {
   float: right;
+  width: fit-content;
 }
 ul.translations > li::marker {
   content: none;
@@ -1270,4 +1274,70 @@ ul.taxonomy-terms > li {
 .embed {
   width: 100%;
   display: flex;
+}
+@media (min-width : 768px) {
+  .article-author-contact {
+    float: none;
+  }
+}
+
+.article-author-contact {
+  display: block;
+  float: left;
+  padding-left: 1em;
+}
+.article-author-avatar {
+  display: block;
+  float: left;
+}
+ul.article-author-contact::marker {
+  content: none;
+}
+ul.article-author-contact > li {
+  display: inline-block;
+  list-style: none;
+}
+ul.article-author-contact {
+  display: inline-block;
+}
+ul.article-author-contact > li.contact-author-name {
+  display: block;
+}
+.article-footer.article-author {
+  margin-right: 1em;
+  padding-right: -1em;
+  display: inline-block;
+  border-right: var(--separator-top-color);
+}
+
+.article-footer.article-author,
+.article {
+  width: 100%;
+}
+.author-email:before,
+.author-github:before,
+.author-reddit:before,
+.author-linkedin:before,
+.author-stackoverflow:before{
+  display: block;
+  font-family: var(--icon-font-family);
+  padding-right: 5px;
+}
+.author-email:before {
+  content: '\f2b6';
+}
+.author-github:before {
+  content: '\f113';
+}
+.author-reddit:before {
+  content: '\f281';
+}
+.author-linkedin:before {
+  content: '\f30c';
+}
+.author-stackoverflow:before {
+  content: '\f16c';
+}
+.contact {
+  font-size: 20px;
 }
