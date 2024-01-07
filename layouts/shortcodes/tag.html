@@ -1,0 +1,4 @@
+{{- $tag := .Get 0 -}}
+{{- $tag  = replace $tag "#" "%23" -}}
+{{- $tag  = replace $tag "." "%2e" -}}
+<a class="tag link" href="/tags/#{{- $tag |  urlize -}}">{{- .Get 0 -}}</a>
