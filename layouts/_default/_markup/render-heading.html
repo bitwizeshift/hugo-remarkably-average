@@ -1,7 +1,21 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
   <a class="heading-anchor" href="#{{ .Anchor | safeURL }}">¶</a>
-{{- $hasTOC := .Page.Store.Get "hasTOC" -}}
-{{- if $hasTOC -}}
-  <a class="heading-return" href="#table-of-contents">&uparrow;</a>
-{{- end -}}
+  {{- $return := "table-of-contents" -}}
+  {{- $enabled := true -}}
+  {{- $kind := .Page.Param "header-backlink" -}}
+  {{- if eq $kind "table-of-contents" -}}
+  {{-   $return = "table-of-contents" -}}
+  {{- else if eq $kind "title" -}}
+  {{-   $return = .Page.Title | urlize -}}
+  {{- else if eq $kind "disabled" -}}
+  {{-   $enabled = false -}}
+  {{- else if eq $kind nil -}}
+  {{-   $return = "table-of-contents" -}}
+  {{- else -}}
+  {{-   errorf "unknown heading-anchor field value '%v'" $kind -}}
+  {{- end -}}
+
+  {{- if $enabled -}}
+    <a class="heading-return" href="#{{- $return -}}">&uparrow;</a>
+  {{- end -}}
 </h{{ .Level }}>
