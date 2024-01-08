@@ -6,7 +6,7 @@ other = "Publié le "
 
 [readingTime]
 one = "Une minute de lecture"
-other = "{{ .Count }} minutes de lecture"
+other = "{{ .ReadingTime }} minutes de lecture"
 
 [Categories]
 one = "Catégorie"

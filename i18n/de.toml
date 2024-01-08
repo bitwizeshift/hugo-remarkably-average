@@ -6,7 +6,7 @@ other = "Posted on "
 
 [readingTime]
 one = "Lesezeit eine Minute"
-other = "Lesezeit {{ .Count }} Minuten"
+other = "Lesezeit {{ .ReadingTime }} Minuten"
 
 [Categories]
 other = "Kategorie"
