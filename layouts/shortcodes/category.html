@@ -1,5 +1,5 @@
 {{- $category := .Get 0 -}}
 {{- $category  = replace $category "#" "%23" -}}
 {{- $category  = replace $category "." "%2e" -}}
-{{- $url := print "tags#" ($category | urlize) -}}
+{{- $url := print "categories/#" ($category | urlize) -}}
 <a class="category link" href="{{- $url | relLangURL -}}">{{- .Get 0 -}}</a>
