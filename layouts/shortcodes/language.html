@@ -1,0 +1,5 @@
+{{- $lang := .Get 0 -}}
+{{- $lang  = replace $lang "#" "%23" -}}
+{{- $lang  = replace $lang "." "%2e" -}}
+{{- $url := print "languages#" ($lang | urlize) -}}
+<a class="language link" href="{{- $url | relLangURL -}}">{{- .Get 0 -}}</a>
