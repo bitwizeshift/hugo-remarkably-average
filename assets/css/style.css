@@ -923,7 +923,8 @@ h2.taxonomy-type-category::before {
 .taxonomy:hover,
 .contact:hover,
 .tag:hover,
-.category:hover {
+.category:hover,
+.language:hover {
   opacity: .5;
   text-decoration: none;
 }
@@ -1098,9 +1099,10 @@ a h2.article.entry-subtitle, a h2.article.subtitle {
 }
 
 .tag,
-.category {
+.category,
+.language {
   display: inline-block;
-  margin: 5px 8px 5px 0;
+  margin: 2px 8px 2px 0;
 }
 .category {
   font-weight: bold;
@@ -1117,8 +1119,13 @@ a h2.article.entry-subtitle, a h2.article.subtitle {
   content: "\e81f";
   padding-right: 5px;
 }
+.language:before {
+  font-family: var(--icon-font-family);
+  content: "\f121";
+  padding-right: 5px;
+}
 
-.tag, .category {
+.tag, .category, .language {
   color: var(--taxonomy-color);
 }
 a.article.entry-bookmark {
