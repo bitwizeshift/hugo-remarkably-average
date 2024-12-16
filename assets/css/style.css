@@ -1102,8 +1102,12 @@ a h2.article.entry-subtitle, a h2.article.subtitle {
 .category,
 .language {
   display: inline-block;
-  margin: 2px 8px 2px 0;
+  margin: 2px 0 2px 0;
 }
+ul.article-taxonomy > li {
+  margin-right: 8px;
+}
+
 .category {
   font-weight: bold;
 }
